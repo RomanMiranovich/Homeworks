@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class SequenceOfNumbers {
   public static void main(String[] args) {
     System.out.println("Enter your sequence (use space between numbers):");
-    Scanner in = new Scanner (System.in);
+    Scanner in = new Scanner(System.in);
     String sequence = in.nextLine();
     String numStr[] = sequence.split(" ");
     int numArr[] = new int [numStr.length];
