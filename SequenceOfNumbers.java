@@ -6,26 +6,25 @@ public class SequenceOfNumbers {
     Scanner in = new Scanner(System.in);
     String sequence = in.nextLine();
     String numStr[] = sequence.split(" ");
-    int numArr[] = new int [numStr.length];
+    if (numStr.length == 1) {
+      System.out.println("You entered only one number. It is not a sequence");
+      return;
+    }
+    boolean checkSequence = true;
     try {
-      for (int i = 0; i < numStr.length; i++) {
-        numArr[i] = Integer.parseInt(numStr[i]);
+      for (int i = 0; i + 1 < numStr.length; i++) {
+        if (Integer.parseInt(numStr[i]) > Integer.parseInt(numStr[i+1])) {
+          checkSequence = false;
+          System.out.println("Your sequence is not non-decreasing");
+          break;
+        }
       }
     } catch (Exception e) {
       System.out.println("You entered a wrong symbol. The program stops working");
       return;
-    }
-    int lengthArr = numArr.length;
-    boolean checkSequence = true;
-    for (int i = 0; i + 1 < lengthArr; i++) {
-      if (numArr[i] > numArr[i+1]) {
-        checkSequence = false;
-        System.out.println("Your sequence is not non-decreasing");
-        break;
-      }
     }   
-    if (checkSequence == true) {
-        System.out.println("Your sequence is non-decreasing");
+    if (checkSequence) {
+      System.out.println("Your sequence is non-decreasing");
     }        
   }
 }
