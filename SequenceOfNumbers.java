@@ -13,7 +13,6 @@ public class SequenceOfNumbers {
     try {
       for (int i = 0; i + 1 < numStr.length; i++) {
         if (Integer.parseInt(numStr[i]) > Integer.parseInt(numStr[i+1])) {
-          checkSequence = false;
           System.out.println("Your sequence is not non-decreasing");
           break;
         } else if (i == numStr.length - 2) {
