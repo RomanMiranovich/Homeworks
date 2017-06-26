@@ -23,7 +23,6 @@ public class SequenceOfNumbers {
       }
     } catch (Exception e) {
       System.out.println("You entered a wrong symbol. The program stops working");
-      System.exit(0);
     }     
   }
 }
