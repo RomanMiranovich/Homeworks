@@ -16,13 +16,12 @@ public class SequenceOfNumbers {
       for (int i = 0; i + 1 < numStr.length; i++) {
         if (Integer.parseInt(numStr[i]) > Integer.parseInt(numStr[i+1])) {
           System.out.println("Your sequence is not non-decreasing");
-          break;
-        } else if (i == numStr.length - 2) {
-          System.out.println("Your sequence is non-decreasing");
-        }
+          return;
+        }        
       }
     } catch (Exception e) {
       System.out.println("You entered a wrong symbol. The program stops working");
-    }     
+    }
+    System.out.println("Your sequence is non-decreasing");
   }
 }
