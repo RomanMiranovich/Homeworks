@@ -16,6 +16,7 @@ public class SequenceOfNumbersModified {
       }
     } catch (Exception e) {
       System.out.println("You entered a wrong symbol. The program stops working");
+      return;
     }
     System.out.println("Your sequence is non-decreasing");
   }
