@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
 public class SequenceOfNumbersModified {
+  /** 
+   * The function is used for determination type of sequence: non-decreasing or not non-decreasing
+   *
+   * @param newArgs - array of String type which contain testing sequence. One elemet of array - one number
+   */ 
   public static void сheckSequence(String[] newArgs) {
     if (newArgs.length == 1) {
       System.out.println("You entered only one number. It is not a sequence");
