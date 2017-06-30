@@ -4,9 +4,9 @@ public class SequenceOfNumbersModified {
   /** 
    * The function is used for determination type of sequence: non-decreasing or not non-decreasing
    *
-   * @param newArgs - array of String type which contain testing sequence. One elemet of array - one number
+   * @param newArgs - array of strings which contain testing sequence. One elemet of array - one number
    */ 
-  public static void сheckSequence(String[] newArgs) {
+  public void сheckSequence(String[] newArgs) {
     if (newArgs.length == 1) {
       System.out.println("You entered only one number. It is not a sequence");
       return;
@@ -27,15 +27,16 @@ public class SequenceOfNumbersModified {
   }
   
   public static void main(String[] args) {
+    SequenceOfNumbersModified object = new SequenceOfNumbersModified();
     if (args.length == 0) {
-      System.out.println("You entered nothing with running program");
+      System.out.println("You entered nothing arguments with starting program");
       Scanner in = new Scanner(System.in);
       System.out.println("Enter your sequence now (use space between numbers):");
       String sequence = in.nextLine();
       String numStr[] = sequence.split(" ");
-      сheckSequence(numStr);
+      object.сheckSequence(numStr);
     } else {
-      сheckSequence(args);
+      object.сheckSequence(args);
     }     
   }
 }
