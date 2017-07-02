@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SequenceOfNumbersModified {
+public class SequenceOfNumbers {
   /** 
    * The function is used for determination type of sequence: non-decreasing or not non-decreasing
    *
