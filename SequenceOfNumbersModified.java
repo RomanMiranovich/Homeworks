@@ -6,7 +6,7 @@ public class SequenceOfNumbersModified {
    *
    * @param newArgs - array of strings which contain testing sequence. One elemet of array - one number
    */ 
-  public void сheckSequence(String[] newArgs) {
+  public String сheckSequence(String[] newArgs) {
     final String POSITIVE_ANSWER = "Your sequence is non-decreasing";
     final String NEGATIVE_ANSWER = "Your sequence is not non-decreasing";
     final String WRONG_SYMBOL_ANSWER = "You entered a wrong symbol. The program stops working";
