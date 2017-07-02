@@ -4,7 +4,7 @@ class Check {
    *
    * @param newArgs - array of strings which contain testing sequence. One elemet of array - one number
    */ 
-  public String ñheckSequence(String[] newArgs) {
+  public String checkSequence(String[] newArgs) {
     final String POSITIVE_ANSWER = "Your sequence is non-decreasing";
     final String NEGATIVE_ANSWER = "Your sequence is not non-decreasing";
     final String WRONG_SYMBOL_ANSWER = "You entered a wrong symbol. The program stops working";
