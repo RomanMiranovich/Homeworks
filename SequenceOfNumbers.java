@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class SequenceOfNumbers {   
+public class SequenceOfNumbers {
   public static void main(String[] args) {
     final String WRONG_SYMBOL = "You entered a wrong symbol. The program stops working";
     final String NOTHING_ARGUMENTS = "You entered nothing arguments with starting program";
