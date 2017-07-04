@@ -11,22 +11,22 @@ public class SequenceOfNumbers {
     final String SINGLE_SYMBOL = "You entered only one number. It is not a sequence";
     String[] numStr;
     
-    if (args.length == 0) {
-      System.out.println(NOTHING_ARGUMENTS);
-      Scanner in = new Scanner(System.in);
-      System.out.println(ENTER_SEQUENCE);
-      String sequence = in.nextLine();
-      numStr = sequence.split(" ");
-    } else {
-      numStr =  Arrays.copyOf(args, args.length);
-    }
+    try { 
+      if (args.length == 0) {
+        System.out.println(NOTHING_ARGUMENTS);
+        Scanner in = new Scanner(System.in);
+        System.out.println(ENTER_SEQUENCE);
+        String sequence = in.nextLine();
+        numStr = sequence.split(" ");
+      } else {
+        numStr =  Arrays.copyOf(args, args.length);
+      }
     
-    if (numStr.length == 1) {
-      System.out.println(SINGLE_SYMBOL);
-      return;
-    }
+      if (numStr.length == 1) {
+        System.out.println(SINGLE_SYMBOL);
+        return;
+      }
     
-    try {
       for (int i = 0; i + 1 < numStr.length; i++) {
         if (Integer.parseInt(numStr[i]) > Integer.parseInt(numStr[i + 1])) {
           System.out.println(NEGATIVE_ANSWER);
