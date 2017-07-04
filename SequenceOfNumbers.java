@@ -6,16 +6,13 @@ public class SequenceOfNumbers {
    *
    * @param newArgs - array of String type which contain testing sequence. One element of array - one number
    */  
-  public String сheckIsSequenceNonDecreasing(String[] newArgs) {
-    final String POSITIVE_ANSWER = "Your sequence is non-decreasing";
-    final String NEGATIVE_ANSWER = "Your sequence is not non-decreasing";
-    
+  public boolean сheckIsSequenceNonDecreasing(String[] newArgs) {    
     for (int i = 0; i + 1 < newArgs.length; i++) {
-      if (Integer.parseInt(newArgs[i]) > Integer.parseInt(newArgs[i+1])) {
-        return NEGATIVE_ANSWER;
+      if (Integer.parseInt(newArgs[i]) > Integer.parseInt(newArgs[i + 1])) {
+        return false;
       }
     }
-    return POSITIVE_ANSWER;
+    return true;
   }
   
   /**
@@ -23,11 +20,8 @@ public class SequenceOfNumbers {
    *
    *@param newArgs - array of String type which contain testing sequence. One element of array - one number
    */  
-  public boolean checkIsOneSymbol(String[] newArgs) {
-    final String SINGLE_SYMBOL = "You entered only one number. It is not a sequence";
-    
+  public boolean checkIsOneSymbol(String[] newArgs) { 
     if (newArgs.length == 1) {
-      System.out.println(SINGLE_SYMBOL);
       return true;
     }
   return false;
@@ -37,7 +31,9 @@ public class SequenceOfNumbers {
     final String WRONG_SYMBOL = "You entered a wrong symbol. The program stops working";
     final String NOTHING_ARGUMENTS = "You entered nothing arguments with starting program";
     final String ENTER_SEQUENCE = "Enter your sequence now (use space between numbers):";
-    String answerIsSequenceNonDecreasing = "0";
+    final String POSITIVE_ANSWER = "Your sequence is non-decreasing";
+    final String NEGATIVE_ANSWER = "Your sequence is not non-decreasing";
+    final String SINGLE_SYMBOL = "You entered only one number. It is not a sequence";
     
     SequenceOfNumbers object = new SequenceOfNumbers();
     try {
@@ -48,12 +44,22 @@ public class SequenceOfNumbers {
         String sequence = in.nextLine();
         String numStr[] = sequence.split(" ");
         if (!object.checkIsOneSymbol(numStr)) {
-          answerIsSequenceNonDecreasing = object.сheckIsSequenceNonDecreasing(numStr);
-          System.out.println(answerIsSequenceNonDecreasing);
+          if (object.сheckIsSequenceNonDecreasing(numStr)) { 
+          System.out.println(POSITIVE_ANSWER);
+          } else {
+          System.out.println(NEGATIVE_ANSWER);
+          }
+        } else {
+          System.out.println(SINGLE_SYMBOL);
         }
       } else if (!object.checkIsOneSymbol(args)) {
-        answerIsSequenceNonDecreasing = object.сheckIsSequenceNonDecreasing(args);
-        System.out.println(answerIsSequenceNonDecreasing);
+        if (object.сheckIsSequenceNonDecreasing(args)) {        
+          System.out.println(POSITIVE_ANSWER);
+        } else {
+          System.out.println(NEGATIVE_ANSWER);
+        }
+      } else {
+        System.out.println(SINGLE_SYMBOL);
       }
     } catch (Exception e) {
       System.out.println(WRONG_SYMBOL);
