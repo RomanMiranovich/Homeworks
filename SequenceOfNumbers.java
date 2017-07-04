@@ -45,7 +45,7 @@ public class SequenceOfNumbers {
     } else {
       checkAnswer = object.сheckSequenceIsNonDecreasing(args);
     }
-    
+
     if (checkAnswer) {
       System.out.println(POSITIVE_ANSWER);
     } else {
