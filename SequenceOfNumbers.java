@@ -2,9 +2,11 @@ import java.util.Scanner;
 
 public class SequenceOfNumbers {
   /** 
-   * The function is used for determination type of sequence: non-decreasing or not non-decreasing
+   * The function is used for determination type of sequence.
+   * It may by non-decreasing or not non-decreasing
    *
-   * @param newArgs - array of String type which contain testing sequence. One elemet of array - one number
+   * @param newArgs - array of String type which contain testing sequence.
+   * One elemet of array - one number.
    */  
   public boolean сheckSequenceIsNonDecreasing(String[] newArgs) {
     final String SINGLE_SYMBOL = "You entered only one number. It is not a sequence";
