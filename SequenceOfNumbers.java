@@ -1,59 +1,89 @@
 import java.util.Scanner;
 
 public class SequenceOfNumbers {
-  /** 
+
+  /**
    * The function is used for determination type of sequence.
-   * It may by non-decreasing or not non-decreasing
+   * It may be non-decreasing or not non-decreasing.
    *
    * @param newArgs - array of String type which contain testing sequence.
    * One elemet of array - one number.
-   */  
+   */
   public boolean сheckSequenceIsNonDecreasing(String[] newArgs) {
-    final String SINGLE_SYMBOL = "You entered only one number. It is not a sequence";
-    final String WRONG_SYMBOL = "You entered a wrong symbol. The program stops working"; 
-    try {
-      if (newArgs.length == 1) {
-        throw new IllegalArgumentException();
+    for (int i = 0; i + 1 < newArgs.length; i++) {
+      if (Integer.parseInt(newArgs[i]) > Integer.parseInt(newArgs[i + 1])) {
+        return false;
       }
-      for (int i = 0; i + 1 < newArgs.length; i++) {
-        if (Integer.parseInt(newArgs[i]) > Integer.parseInt(newArgs[i + 1])) {
-          return false;
-        }
-      }
-    } catch (NumberFormatException e) {
-      System.out.println(WRONG_SYMBOL);
-      System.exit(13);
-    } catch (IllegalArgumentException e) {
-      System.out.println(SINGLE_SYMBOL);
-      System.exit(13);
     }
     return true;
+  }
+
+  /**
+   * This function is used for checking are the entered numbers a sequence.
+   *
+   * @param newArgs - array of String type which contain testing sequence.
+   * One elemet of array - one number.
+   *
+   * @return true if was entered several numbers,
+   * and false if entered only one number.
+   */
+  public boolean checkIsOneSymbol(String[] newArgs) {
+    if (newArgs.length == 1) {
+      return true;
+    }
+  return false;
+  }
+
+  /**
+   * This function is used for calling functions
+   * {@link SequenceOfnumbers#сheckSequenceIsNonDecreasing}
+   * and {@link SequenceOfnumbers#checkIsOneSymbol}.
+   *
+   * @param newArgs - array of String type which contain testing sequence.
+   * One elemet of array - one number.
+   * 
+   * @return string with information about sequence.
+   *
+   * @exception NumberFormatException is thrown
+   * when user enter wrong data.
+   */
+  public String generalCheck(String[] newArgs) {
+    final String POSITIVE_ANSWER = "Your sequence is non-decreasing";
+    final String NEGATIVE_ANSWER = "Your sequence is not non-decreasing";
+    final String SINGLE_SYMBOL = "You entered only one number. It is not a sequence";
+    SequenceOfNumbers object = new SequenceOfNumbers();
+    if (!object.checkIsOneSymbol(newArgs)) {
+      if (!object.сheckSequenceIsNonDecreasing(newArgs)) {
+        return NEGATIVE_ANSWER;
+      } else {
+        return POSITIVE_ANSWER;
+      }
+    } else {
+      return SINGLE_SYMBOL;
+    }
   }
 
   public static void main(String[] args) {
     final String WRONG_SYMBOL = "You entered a wrong symbol. The program stops working";
     final String NOTHING_ARGUMENTS = "You entered nothing arguments with starting program";
     final String ENTER_SEQUENCE = "Enter your sequence now (use space between numbers):";
-    final String POSITIVE_ANSWER = "Your sequence is non-decreasing";
-    final String NEGATIVE_ANSWER = "Your sequence is not non-decreasing";
     SequenceOfNumbers object = new SequenceOfNumbers();
-    boolean checkAnswer = false;
+    String checkAnswer;
 
-    if (args.length == 0) {
-      System.out.println(NOTHING_ARGUMENTS);
-      Scanner in = new Scanner(System.in);
-      System.out.println(ENTER_SEQUENCE);
-      String sequence = in.nextLine();
-      String[] numStr = sequence.split(" ");
-      checkAnswer = object.сheckSequenceIsNonDecreasing(numStr);
-    } else {
-      checkAnswer = object.сheckSequenceIsNonDecreasing(args);
-    }
-
-    if (checkAnswer) {
-      System.out.println(POSITIVE_ANSWER);
-    } else {
-      System.out.println(NEGATIVE_ANSWER);
+    try {
+      if (args.length == 0) {
+        System.out.println(NOTHING_ARGUMENTS);
+        Scanner in = new Scanner(System.in);
+        System.out.println(ENTER_SEQUENCE);
+        String sequence = in.nextLine();
+        String[] numStr = sequence.split(" ");
+        checkAnswer = object.generalCheck(numStr);
+      } else {
+        checkAnswer = object.generalCheck(args);
+      }
+      System.out.println(checkAnswer);
+    } catch (NumberFormatException e) {
+      System.out.println(WRONG_SYMBOL);
     }
   }
 }
