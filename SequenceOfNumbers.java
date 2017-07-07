@@ -35,9 +35,9 @@ public class SequenceOfNumbers {
   }
 
   /**
-   * This function is used for calling functions
-   * {@link SequenceOfnumbers#сheckSequenceIsNonDecreasing}
-   * and {@link SequenceOfnumbers#checkIsOneSymbol}.
+   * This function is used for checking sequence
+   * if it contains one number and is the sequence a 
+   * non-decreasing or not non-decreasing.
    *
    * @param newArgs - array of String type which contain testing sequence.
    * One elemet of array - one number.
