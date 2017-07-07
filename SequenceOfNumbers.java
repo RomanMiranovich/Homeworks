@@ -28,10 +28,7 @@ public class SequenceOfNumbers {
    * and false if entered only one number.
    */
   public boolean checkIsOneSymbol(String[] newArgs) {
-    if (newArgs.length == 1) {
-      return true;
-    }
-  return false;
+    return newArgs.length == 1;
   }
 
   /**
