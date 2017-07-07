@@ -47,7 +47,7 @@ public class SequenceOfNumbers {
    * @exception NumberFormatException is thrown
    * when user enter wrong data.
    */
-  public String generalCheck(String[] newArgs) {
+  public String checkIsOneSymbolAndIsSequenceNonDecreasing(String[] newArgs) {
     final String POSITIVE_ANSWER = "Your sequence is non-decreasing";
     final String NEGATIVE_ANSWER = "Your sequence is not non-decreasing";
     final String SINGLE_SYMBOL = "You entered only one number. It is not a sequence";
@@ -77,9 +77,9 @@ public class SequenceOfNumbers {
         System.out.println(ENTER_SEQUENCE);
         String sequence = in.nextLine();
         String[] numStr = sequence.split(" ");
-        checkAnswer = object.generalCheck(numStr);
+        checkAnswer = object.checkIsOneSymbolAndIsSequenceNonDecreasing(numStr);
       } else {
-        checkAnswer = object.generalCheck(args);
+        checkAnswer = object.checkIsOneSymbolAndIsSequenceNonDecreasing(args);
       }
       System.out.println(checkAnswer);
     } catch (NumberFormatException e) {
