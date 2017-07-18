@@ -3,7 +3,6 @@ import java.util.Scanner;
 /**
  * The class is used for entering some sequence of numbers.
  */
-
 class ConsoleReader {
   /** 
    * The function is used for entering sequence
