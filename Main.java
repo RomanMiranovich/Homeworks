@@ -14,10 +14,6 @@ public class Main {
       int size = in.nextInt();
       VariableArray arr = new VariableArray(size);
 
-      /*for (int i = 0; i < size - 1; i++) {
-        arr.setElement(i + 1, i);
-      }*/
-
       arr.addElement(105);
       strArray = arr.outArray();
       System.out.println(ADD + strArray);
