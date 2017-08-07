@@ -6,7 +6,6 @@ import java.math.BigDecimal;
  * And for determination type of triangle.
  */
 
-//todo modification this code with 3 classes of triangles
 class Triangle {
   private BigDecimal a;
   private BigDecimal b;
@@ -14,9 +13,8 @@ class Triangle {
 
   /**
    * This constructor is used for creating new triangles.
-   * The parameters are sides of triangle in String type.
+   * The parameters are sides of triangle of String type.
    */ 
-  //todo norm javadock
   public Triangle(String a, String b, String c) throws NumberFormatException {
     this.a = new BigDecimal(a);
     this.b = new BigDecimal(b);
@@ -36,7 +34,12 @@ class Triangle {
     }  
   }
 
-  //todo javadock
+  /**
+   * The function is used for determination type
+   * of triangle.
+   *
+   * @return String with mane of type of triangle.
+   */
   public String checkTriangleType() {
     final String EQUILATERAL_ANSWER = "It is equilateral triangle";
     final String ISOSCELES_ANSWER = "It is isosceles triangle";
